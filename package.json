@@ -4,7 +4,7 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ privacy-pools",
+    "deploy": "graph deploy --product hosted-service dan13ram/pools-optimism-goerli",
     "create-local": "graph create --node http://localhost:8020/ privacy-pools",
     "remove-local": "graph remove --node http://localhost:8020/ privacy-pools",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 privacy-pools",

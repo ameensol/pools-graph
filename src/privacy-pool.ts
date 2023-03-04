@@ -1,7 +1,7 @@
 import {
   Deposit as DepositEvent,
   Withdrawal as WithdrawalEvent
-} from "../generated/PrivacyPool/PrivacyPool"
+} from "../generated/PrivacyPool-0.001-ETH/PrivacyPool"
 import { Commitment, SubsetRoot } from "../generated/schema"
 
 export function handleDeposit(event: DepositEvent): void {
