@@ -1,0 +1,73 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: PrivacyPool-0.01-ETH
+    network: optimism-goerli
+    source:
+      abi: PrivacyPool
+      address: "0x13B6BD28d27a33c14E3B7f95185Ec7a091C1F2de"
+      startBlock: 5171803
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Commitment
+        - SubsetRoot
+      abis:
+        - name: PrivacyPool
+          file: ./abis/PrivacyPool.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint256,uint256,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,indexed address,indexed bytes32,indexed
+            bytes32,uint256)
+          handler: handleWithdrawal
+      file: ./src/privacy-pool.ts
+  - kind: ethereum
+    name: PrivacyPool-0.001-ETH
+    network: optimism-goerli
+    source:
+      abi: PrivacyPool
+      address: "0x3fB005c1A83FCF63A87fC584aC2a5c67FB38F880"
+      startBlock: 5171806
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Commitment
+        - SubsetRoot
+      abis:
+        - name: PrivacyPool
+          file: ./abis/PrivacyPool.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint256,uint256,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,indexed address,indexed bytes32,indexed
+            bytes32,uint256)
+          handler: handleWithdrawal
+      file: ./src/privacy-pool.ts
+  - kind: ethereum
+    name: SubsetRegistry
+    network: optimism-goerli
+    source:
+      abi: SubsetRegistry
+      address: "0xa4410556507e44EDa497Fe5051eb37F8aD2C4104"
+      startBlock: 5171799
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - SubsetData
+      abis:
+        - name: SubsetRegistry
+          file: ./abis/SubsetRegistry.json
+      eventHandlers:
+        - event: Subset(indexed bytes32,indexed bytes32,indexed
+            address,uint256,uint256,bytes)
+          handler: handleWithdrawAndRecord
+      file: ./src/subset-registry.ts

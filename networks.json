@@ -1,0 +1,30 @@
+{
+  "goerli": {
+    "PrivacyPool-0.01-ETH": {
+      "address": "0xC1e42b18Ba0c454f32D437c397FC96a51dB3556d",
+      "startBlock": 8230269
+    },
+    "PrivacyPool-0.001-ETH": {
+      "address": "0xeeB3445BB3702B1aE830f6fe02BcFeF082860468",
+      "startBlock": 8218336
+    },
+    "SubsetRegistry": {
+      "address": "0x5B27a0d86fa25bf74A77f0d0841d292eD4B6f992",
+      "startBlock": 8430768
+    }
+  },
+  "optimism-goerli": {
+    "PrivacyPool-0.01-ETH": {
+      "address": "0x13B6BD28d27a33c14E3B7f95185Ec7a091C1F2de",
+      "startBlock": 5171803
+    },
+    "PrivacyPool-0.001-ETH": {
+      "address": "0x3fB005c1A83FCF63A87fC584aC2a5c67FB38F880",
+      "startBlock": 5171806
+    },
+    "SubsetRegistry": {
+      "address": "0xa4410556507e44EDa497Fe5051eb37F8aD2C4104",
+      "startBlock": 5171799
+    }
+  }
+}

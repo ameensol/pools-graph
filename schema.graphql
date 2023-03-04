@@ -1,0 +1,29 @@
+type Commitment @entity(immutable: true) {
+  id: Bytes!
+  timestamp: BigInt! # uint256
+  contractAddress: Bytes! # address
+  sender: Bytes! # address
+  leafIndex: BigInt! # uint256
+  commitment: Bytes! # bytes32
+}
+
+type SubsetRoot @entity(immutable: true) {
+  id: Bytes!
+  timestamp: BigInt! # uint256
+  contractAddress: Bytes! # address
+  sender: Bytes! # address
+  subsetRoot: Bytes! # bytes32
+  relayer: Bytes! # address
+  recipient: Bytes! # address
+  nullifier: Bytes! # bytes32
+}
+
+type SubsetData @entity(immutable: true) {
+  id: Bytes!
+  contractAddress: Bytes! # address
+  subsetRoot: Bytes! # bytes32
+  nullifier: Bytes! # bytes32
+  accessType: BigInt! # uint256
+  bitLength: BigInt! # uint256
+  subsetData: Bytes! # bytes
+}
