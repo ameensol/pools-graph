@@ -3,36 +3,12 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: PrivacyPool-0.01-ETH
+    name: PrivacyPool
     network: optimism-goerli
     source:
       abi: PrivacyPool
       address: "0x13B6BD28d27a33c14E3B7f95185Ec7a091C1F2de"
       startBlock: 5171803
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.7
-      language: wasm/assemblyscript
-      entities:
-        - Commitment
-        - SubsetRoot
-      abis:
-        - name: PrivacyPool
-          file: ./abis/PrivacyPool.json
-      eventHandlers:
-        - event: Deposit(indexed bytes32,uint256,uint256,uint256)
-          handler: handleDeposit
-        - event: Withdrawal(address,indexed address,indexed bytes32,indexed
-            bytes32,uint256)
-          handler: handleWithdrawal
-      file: ./src/privacy-pool.ts
-  - kind: ethereum
-    name: PrivacyPool-0.001-ETH
-    network: optimism-goerli
-    source:
-      abi: PrivacyPool
-      address: "0x3fB005c1A83FCF63A87fC584aC2a5c67FB38F880"
-      startBlock: 5171806
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
